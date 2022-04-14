@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //反转链表
+        function ReverseList(pHead) {
+            if (pHead == null || pHead.next == null) {
+                return pHead
+            }
+            let cur = pHead //当前的节点
+            let pre = null //前一个节点
+            while (cur) {
+                let next = cur.next //保存下一个节点
+                cur.next = pre      //反转链表
+                pre = cur           //为下一轮做准备
+                cur = next          //为下一轮做准备 
+            }
+            return pre
+        }
+
+        //反转字符串
+        function solve(str) {
+            // write code here
+            let newStr = ''
+            for (let i = str.length - 1; i >= 0; i--) {
+                newStr += str[i]
+            }
+            return newStr
+        }
+
+        console.log(solve('abcd'));
+    </script>
+</body>
+
+</html>

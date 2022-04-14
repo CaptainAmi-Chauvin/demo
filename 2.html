@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function norepeat(arr) {
+            for (var i = 0; i < arr.length; i++) {
+                for (var j = i + 1; j < arr.length;j++) {    // 将当前选项与之后选项作对比，删除重复的
+                    if (arr[i] == arr[j]) {
+                        arr.splice(j, 1);
+                        
+                    }
+                    
+                }
+
+            }
+            return arr;
+        }
+        var arr2 = [11, 6, 5, 4, 8, 6, 1, 15, 4, 6];
+        var arr1 = norepeat(arr2);
+        console.log(arr1);
+
+    </script>
+</body>
+
+</html>

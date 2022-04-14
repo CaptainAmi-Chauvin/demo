@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //节流，一段时间内仅执行第一段代码
+        var timeout;
+        function debounce(func, wait) {
+            return function () {
+                var args = arguments;
+                var content = this;
+                timeout = setTimeout(
+                    function () {
+                        func.apply(content, args);
+                        clearTimeout(timeout)
+                    }, wait);
+                console.log(args.callee);
+            }
+        }
+
+        function action(e) {
+            console.log('action is active.')
+            console.log(e);
+        }
+
+        function sleep(time) {
+            return new Promise((resolve) => setTimeout(resolve, time));
+        }
+
+        (async function () {
+            for (i = 0; i < 10; i++) {
+                await sleep(500);
+                debounce(action, 1000)();
+            }
+        })();
+
+    </script>
+</body>
+
+</html>

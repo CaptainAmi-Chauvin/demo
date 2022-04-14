@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            border: 1px solid red;
+            display: flex;
+        }
+
+        /*  流体布局,先绘制左右栏 */
+        
+
+        .left {
+            
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+        }
+
+        .right {
+            
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+            order: 2;
+        }
+
+        .mid {
+            background-color: cadetblue;
+            height: 200px;
+            order: 1;
+            flex-grow: 1;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="left">left</div>
+        <div class="right">right</div>
+        <div class="mid">mid</div>
+    </div>
+</body>
+
+
+
+</html>
